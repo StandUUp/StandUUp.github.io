@@ -1,0 +1,9 @@
+.img-logo{
+    position: relative;
+    top:2px;
+}
+.copyright{
+    text-align: right;
+    margin:0;
+    padding:13px 0;
+}
