@@ -73,7 +73,8 @@ figure img {
 }
 
 figure,
-ul {
+aside,
+article{
   background-color: #fff;
 }
 
