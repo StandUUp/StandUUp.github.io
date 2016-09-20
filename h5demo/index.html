@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/animate.css">
+    <title>H5简单滑动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial 'Microsoft YaHei' sans-serif;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 48px;
+            margin: 100px 0;
+        }
+        
+        #page1 {
+            background-color: #8fcb87;
+        }
+        
+        #page2 {
+            background-color: #ffdc7a;
+        }
+        
+        #page3 {
+            background-color: #75bce8;
+        }
+        
+        #page4 {
+            background-color: #792981;
+        }
+        
+        #page5 {
+            background-color: #ed174b;
+        }
+        
+        .page {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .current {
+            z-index: 2;
+        }
+        
+        .current {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        
+        .go2next .current {
+            -webkit-animation-name: next;
+            animation-name: next;
+        }
+        
+        .go2prev .current {
+            -webkit-animation-name: prev;
+            animation-name: prev;
+        }
+        
+        @keyframes next {
+            from {
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        @-webkit-keyframes next {
+            from {
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        @keyframes prev {
+            from {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        @-webkit-keyframes prev {
+            from {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        .dx-arrow {
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            margin-left: -11px;
+            width: 22px;
+            height: 18px;
+            background: url(images/arrow.png) center/cover no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="pages">
+            <div id="page1" class="page">
+                <p class="animated" data-animation="fadeInDown">animation1</p>
+                <p class="animated" data-animation="fadeInUp" data-delay="800">animation2</p>
+            </div>
+            <div id="page2" class="page">
+                <p class="animated" data-animation="shake">animation1</p>
+                <p class="animated" data-animation="bounce" data-delay="400">animation2</p>
+            </div>
+            <div id="page3" class="page">
+                <p class="animated" data-animation="bounce">animation</p>
+            </div>
+            <div id="page4" class="page">
+                <p class="animated" data-animation="bounce">animation</p>
+            </div>
+            <div id="page5" class="page">
+                <p class="animated" data-animation="bounce">animation</p>
+            </div>
+        </div>
+    </div>
+    <script src="lib/zepto.min.js"></script>
+    <script src="dxSlider.js"></script>
+    <script>
+        $("#pages").dxSlider();
+    </script>
+</body>
+
+</html>
